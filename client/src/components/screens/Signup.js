@@ -44,10 +44,10 @@ const Signup = () => {
   return (
     <div className="mycard">
       <div className="card auth-card input-field">
-        <h2 className="brand-logo">Instagram</h2>
+        <h2 className="brand-logo"> Sign Up</h2>
         <input
           type="text"
-          placeholder="name"
+          placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
@@ -59,13 +59,13 @@ const Signup = () => {
         />
         <input
           type="text"
-          placeholder="email"
+          placeholder="E-mail"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
-          type="text"
-          placeholder="password"
+          type="password"
+          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
@@ -76,9 +76,11 @@ const Signup = () => {
         >
           Sign Up
         </button>
-        <h5>
-          <Link to="/Signin">Already have an account?</Link>
-        </h5>
+        <h5> Already Have an Account? </h5>
+        <p>
+          <Link to="/Signin">Sign in Here</Link>
+        </p>
+        
       </div>
     </div>
   );

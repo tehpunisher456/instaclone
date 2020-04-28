@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
 /* Jane CreatePost CSS Start*/
 
@@ -112,7 +112,7 @@ h1, h2, h3, p, div, input, button {
   }
 
   .brand-logo{
-    font-family: 'Grand Hotel', cursive;
+    font-family: 'PT Sans', sans-serif;
   }
   
   .mycard {

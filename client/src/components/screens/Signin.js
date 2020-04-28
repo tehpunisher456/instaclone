@@ -54,8 +54,8 @@ const Signin = () => {
           onChange={(e) => setUserName(e.target.value)}
         />
           <input
-          type="text"
-          placeholder="password"
+          type="password"
+          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
@@ -63,9 +63,10 @@ const Signin = () => {
         onClick={()=>PostData()}>
           Sign in
         </button>
-        <h2>
-          <Link to = "/Signup">Need an account?</Link>
-        </h2>
+        <h5> New Here?</h5>
+        <p>
+          <Link to = "/Signup">Sign up for an account!</Link>
+        </p>
       </div>
     </div>
   )
