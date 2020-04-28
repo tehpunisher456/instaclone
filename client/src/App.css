@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+
 /* Jane CreatePost CSS Start*/
 
 /* default font */
@@ -102,3 +104,44 @@ h1, h2, h3, p, div, input, button {
   
   
   /* Yurim CSS for Home page end*/
+
+  /* Erik Stuff  */
+
+  a{
+    color: black !important;
+  }
+
+  .brand-logo{
+    font-family: 'Grand Hotel', cursive;
+  }
+  
+  .mycard {
+    margin-top: 30px;
+  }
+  .auth-card{
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+    margin: 10px auto;
+  }
+
+  .input-field input[type= text]:focus{
+    border-bottom: solid 1px rgb(8,93,252) !important;
+    box-shadow: 0 1px 0 0 rgb(8,93,252) !important;
+  }
+  .gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .item{
+    width: 30%;
+  }
+  .home{
+  }
+  .home-card{
+    max-width: 500px;
+    margin: 26px auto;
+
+    height: max-content;
+  }
