@@ -138,10 +138,17 @@ h1, h2, h3, p, div, input, button {
     width: 30%;
   }
   .home{
+    margin: 26px auto;
   }
   .home-card{
     max-width: 500px;
     margin: 26px auto;
 
     height: max-content;
+  }
+
+  #toast-container{
+    top: 30px !important;
+    right: 20px !important;
+    left: auto !important;
   }

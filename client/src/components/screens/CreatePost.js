@@ -13,17 +13,6 @@ const CreatePost = () => {
             <div className="form-group">
 
                 <form>
-                    {/*Upload Button*/}
-                    <div className="file-field input-field">
-                        <p>Upload photo of your product</p>
-                        <div className="btn red accent-4">
-                            <span>File</span>
-                            <input type="file" className="form-control-file input-field" />
-                        </div>
-                        <div className="file-path-wrapper">
-                            <input className="file-path validate" type="text" />
-                        </div>
-                    </div>
 
                 {/*file uplaod with bootstrap*/}
                     {/* <form>
@@ -35,15 +24,27 @@ const CreatePost = () => {
 
                     <h2>Product Details</h2>
                     <div className="input-field">
-                        <input type="text" className="form-control" placeholder="Brand Name" />
+                        <input type="text" className="form-control" placeholder="Product Name" />
                         <input type="text" className="form-control" placeholder="size" />
                         <input type="text" className="form-control" placeholder="Price (ex: $20.00)" />
                         <textarea id="textarea1" className="materialize-textarea input-field" placeholder="description"></textarea>
                     </div>
 
+                      {/*Upload Button*/}
+                      <div className="file-field input-field">
+                        <p>Select a Photo to Upload </p>
+                        <div className="btn red accent-4">
+                            <span>File</span>
+                            <input type="file" className="form-control-file input-field" />
+                        </div>
+                        <div className="file-path-wrapper">
+                            <input className="file-path validate" type="text" />
+                        </div>
+                    </div>
+
 
                     <button className="btn btn-primary mb-2 red accent-4">
-                        Submit Post
+                        Upload Post
             </button>
 
                 </form>
