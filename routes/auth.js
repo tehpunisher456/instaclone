@@ -1,72 +1,68 @@
-const express = require("express");
-const router = express.Router();
-const mongoose = require("mongoose");
-const User = mongoose.model("User");
+const express = require('express')
+const router = express.Router()
+const mongoose = require('mongoose')
+const User = mongoose.model("User")
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const {JWT_SECRET} = require('../config/keys')
 const requireLogin = require('../middleware/requireLogin')
 
-// Verify User Token Middleware
-router.get('/protected',requireLogin, (req, res)=>{
-    res.send("hello user")
+
+router.post('/signup',(req,res)=>{
+  const {name,email,password,pic} = req.body 
+  if(!email || !password || !name){
+     return res.status(422).json({error:"please add all the fields"})
+  }
+  User.findOne({email:email})
+  .then((savedUser)=>{
+      if(savedUser){
+        return res.status(422).json({error:"user already exists with that email"})
+      }
+      bcrypt.hash(password,12)
+      .then(hashedpassword=>{
+            const user = new User({
+                email,
+                password:hashedpassword,
+                name,
+                pic
+            })
+    
+            user.save()
+            .then(user=>{
+                res.json({message:"saved successfully"})
+            })
+            .catch(err=>{
+                console.log(err)
+            })
+      })
+     
+  })
+  .catch(err=>{
+    console.log(err)
+  })
 })
 
-// User Signup Route
 
-router.post("/signup", (req, res) => {
-  const { name, email, password, userName } = req.body;
-  if (!email || !password || !name || !userName) {
-    res.status(422).json({ error: "please fill out all the fields" });
-  }
-  User.findOne({ email: email }).then((savedUser) => {
-    if (savedUser) {
-      return res
-        .status(422)
-        .json({ error: "An account with that email already exists" });
-    }
-    bcrypt.hash(password, 12)
-      .then((hashedpassword) => {
-        const user = new User({
-          email,
-          password:hashedpassword,
-          name,
-          userName,
-        });
-        user.save().then((user) => {
-          res.json({ message: "User saved successfully" });
-        });
-      })
-      .catch((err) => {
-        consolelog(err);
-      });
-  }).catch(err=>{
-      console.log(err)
-  });
-});
-
-// User Signin Route
-
-router.post('/signin', (req,res)=>{
-    const{userName, password}= req.body
+router.post('/signin',(req,res)=>{
+    const {userName,password} = req.body
     if(!userName || !password){
-        res.status(422).json({error: "Invalid username or password."})
+       return res.status(422).json({error:"please add username or password"})
     }
-    User.findOne({userName: userName})
+    User.findOne({userName:userName})
     .then(savedUser=>{
         if(!savedUser){
-            res.status(422).json({error: "User does not exist."})
+           return res.status(422).json({error:"Invalid username or password"})
         }
-        bcrypt.compare(password, savedUser.password)
+        bcrypt.compare(password,savedUser.password)
         .then(doMatch=>{
             if(doMatch){
-                // res.json({message: "Sign in successful"})
-                const token = jwt.sign({_id: savedUser._id}, JWT_SECRET)
-                const{_id, userName, email} = savedUser
-                res.json({token, user:{_id, userName, email}})
+                // res.json({message:"successfully signed in"})
+               const token = jwt.sign({_id:savedUser._id},JWT_SECRET)
+               const {_id,name,userName,followers,following,pic} = savedUser
+               res.json({token,user:{_id,name,userName,followers,following,pic}})
             }
             else{
-                return res.status(422).json({error: "Invalid username or password"})
+                return res.status(422).json({error:"Invalid username or password"})
             }
         })
         .catch(err=>{
@@ -75,4 +71,5 @@ router.post('/signin', (req,res)=>{
     })
 })
 
-module.exports = router;
+
+module.exports = router

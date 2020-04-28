@@ -5,7 +5,7 @@ const Home  = ()=>{
     const [data,setData] = useState([])
     const {state,dispatch} = useContext(UserContext)
     useEffect(()=>{
-       fetch('/allpost',{
+       fetch('/getsubpost',{
            headers:{
                "Authorization":"Bearer "+localStorage.getItem("jwt")
            }
@@ -129,20 +129,34 @@ const Home  = ()=>{
                             <div className="card-content">
                             {item.likes.includes(state._id)
                             ? 
-                             <i className="material-icons"style={{ color: "red" }}
-                                    onClick={()=>{unlikePost(item._id)}}
-                              >favorite</i>
+                            <i
+                  className="material-icons"
+                  style={{ color: "red" }}
+                  onClick={() => {
+                    likePost(item._id);
+                  }}
+                >
+                  {" "}
+                  favorite_border{" "}
+                </i>
                             : 
-                            <i className="material-icons"style={{ color: "red" }}
-                            onClick={()=>{likePost(item._id)}}
-                            >favorite_border</i>
+                            <i
+                            className="material-icons"
+                            style={{ color: "red" }}
+                            onClick={() => {
+                              unlikePost(item._id);
+                            }}
+                          >
+                            {" "}
+                            favorite{" "}
+                          </i>
                             }
                             
                            
                                 <h6>{item.likes.length} likes</h6>
                                 <h6>{item.title}</h6>
                                 <h6>{item.price}</h6>
-                                <p>{item.body}</p>s
+                                <p>{item.body}</p>
                                 {
                                     item.comments.map(record=>{
                                         return(
