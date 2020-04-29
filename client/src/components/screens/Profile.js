@@ -20,9 +20,9 @@ const Profile  = ()=>{
        if(image){
         const data = new FormData()
         data.append("file",image)
-        data.append("upload_preset","insta-clone")
-        data.append("cloud_name","cnq")
-        fetch("https://api.cloudinary.com/v1_1/cnq/image/upload",{
+        data.append("upload_preset","project-3")
+        data.append("cloud_name","dslp1tpl4")
+        fetch("https://api.cloudinary.com/v1_1/dslp1tpl4/image/upload",{
             method:"post",
             body:data
         })

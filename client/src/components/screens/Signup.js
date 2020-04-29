@@ -1,12 +1,13 @@
 import React,{useState,useEffect} from 'react'
 import {Link,useHistory} from 'react-router-dom'
 import M from 'materialize-css'
-const SignIn  = ()=>{
+const SignUp  = ()=>{
     const history = useHistory()
     const [name,setName] = useState("")
     const [password,setPasword] = useState("")
     const [email,setEmail] = useState("")
     const [image,setImage] = useState("")
+    const [userName, setuserName] = useState("")
     const [url,setUrl] = useState(undefined)
     useEffect(()=>{
         if(url){
@@ -16,9 +17,9 @@ const SignIn  = ()=>{
     const uploadPic = ()=>{
         const data = new FormData()
         data.append("file",image)
-        data.append("upload_preset","insta-clone")
-        data.append("cloud_name","cnq")
-        fetch("https://api.cloudinary.com/v1_1/cnq/image/upload",{
+        data.append("upload_preset","project-3")
+        data.append("cloud_name","dslp1tpl4")
+        fetch("https://api.cloudinary.com/dslp1tpl4/cnq/image/upload",{
             method:"post",
             body:data
         })
@@ -43,6 +44,7 @@ const SignIn  = ()=>{
             body:JSON.stringify({
                 name,
                 password,
+                userName,
                 email,
                 pic:url
             })
@@ -71,12 +73,18 @@ const SignIn  = ()=>{
    return (
       <div className="mycard">
           <div className="card auth-card input-field">
-            <h2>Instagram</h2>
+            <h2>BTS UwU</h2>
             <input
             type="text"
             placeholder="name"
             value={name}
             onChange={(e)=>setName(e.target.value)}
+            />
+             <input
+            type="text"
+            placeholder="username"
+            value={userName}
+            onChange={(e)=>setuserName(e.target.value)}
             />
             <input
             type="text"
@@ -92,7 +100,7 @@ const SignIn  = ()=>{
             />
             <div className="file-field input-field">
             <div className="btn #64b5f6 blue darken-1">
-                <span>Upload pic</span>
+                <span>Profile Pic</span>
                 <input type="file" onChange={(e)=>setImage(e.target.files[0])} />
             </div>
             <div className="file-path-wrapper">
@@ -102,10 +110,10 @@ const SignIn  = ()=>{
             <button className="btn waves-effect waves-light #64b5f6 blue darken-1"
             onClick={()=>PostData()}
             >
-                SignUP
+                Sign Up
             </button>
             <h5>
-                <Link to="/signin">Already have an account ?</Link>
+                <Link to="/signin">Already have an account? Sign In</Link>
             </h5>
              
                
@@ -118,4 +126,4 @@ const SignIn  = ()=>{
 }
 
 
-export default SignIn
+export default SignUp
