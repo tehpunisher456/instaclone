@@ -7,7 +7,8 @@ const NavBar = ()=>{
      const renderList = ()=>{
        if(state){
            return [
-            <li><Link to="/profile">Profile</Link></li>,
+            <li><Link to="/"> All Posts</Link></li>,
+            <li><Link to="/profile"> My Profile</Link></li>,
             <li><Link to="/create">Create Post</Link></li>,
             <li><Link to="/myfollowingpost">My Timeline</Link></li>,
             <li>
@@ -34,7 +35,7 @@ const NavBar = ()=>{
     return(
         <nav>
         <div className="nav-wrapper white">
-          <Link to={state?"/":"/signin"} className="brand-logo center">BTS UwU</Link>
+          <Link to={state?"/myfollowingpost":"/signin"} className="brand-logo center">BTS UwU</Link>
           <ul id="nav-mobile" className="right">
              {renderList()}
   

@@ -94,7 +94,7 @@ const Profile  = ()=>{
                    />
                </div>
                <div>
-                   <h4>{userProfile.user.name}</h4>
+                   <h4>{userProfile.user.userName}</h4>
                    <h5>{userProfile.user.email}</h5>
                    <div style={{display:"flex",justifyContent:"space-between",width:"108%"}}>
                        <h6>{userProfile.posts.length} posts</h6>
