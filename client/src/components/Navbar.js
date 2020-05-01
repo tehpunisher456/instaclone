@@ -7,9 +7,12 @@ const NavBar = ()=>{
      const renderList = ()=>{
        if(state){
            return [
+
+            <li><Link to="/"> All Posts</Link></li>,
             <li><Link to="/profile" className = "navbar-link-color">Profile</Link></li>,
             <li><Link to="/create" className = "navbar-link-color">Create Post</Link></li>,
             <li><Link to="/myfollowingpost" className = "navbar-link-color">My Timeline</Link></li>,
+
             <li>
              <button className="btn #c62828 red darken-3"
             onClick={()=>{
@@ -33,8 +36,10 @@ const NavBar = ()=>{
      }
     return(
         <nav>
+
         <div className="nav-wrapper main-background-color">
-          <Link to={state?"/":"/signin"} className="brand-logo center">Insta $ell</Link>
+          <Link to={state?"/myfollowingpost":"/signin"} className="brand-logo center">Insta $ell</Link>
+
           <ul id="nav-mobile" className="right">
              {renderList()}
   
