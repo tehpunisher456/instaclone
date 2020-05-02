@@ -1,3 +1,4 @@
+
 import React, { useContext } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { UserContext } from '../App'
@@ -17,6 +18,7 @@ const NavBar = () => {
         <li>
           <button className="btn #c62828 red darken-3"
             onClick={() => {
+
               localStorage.clear()
               dispatch({ type: "CLEAR" })
               history.push('/signin')
