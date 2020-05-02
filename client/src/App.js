@@ -10,6 +10,7 @@ import CreatePost from './components/screens/CreatePost'
 import {reducer,initialState} from './reducers/userReducer'
 import UserProfile from './components/screens/UserProfile'
 import MyTimeline from './components/screens/MyTimeline'
+import Checkout from './components/screens/Checkout'
 export const UserContext = createContext()
 
 
@@ -46,6 +47,9 @@ const Routing = ()=>{
       </Route>
       <Route path="/myfollowingpost">
         <MyTimeline />
+      </Route>
+      <Route path="/checkout">
+        <Checkout />
       </Route>
       
     </Switch>
