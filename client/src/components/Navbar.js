@@ -8,7 +8,7 @@ const NavBar = ()=>{
        if(state){
            return [
 
-            <li><Link to="/"> All Posts</Link></li>,
+            <li><Link to="/" className="navbar-link-color"> All Posts</Link></li>,
             <li><Link to="/profile" className = "navbar-link-color">Profile</Link></li>,
             <li><Link to="/create" className = "navbar-link-color">Create Post</Link></li>,
             <li><Link to="/myfollowingpost" className = "navbar-link-color">My Timeline</Link></li>,
