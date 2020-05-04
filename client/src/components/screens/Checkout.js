@@ -28,7 +28,7 @@ function Checkout() {
  
    const [product] = React.useState({
      name: "Otter-shaped Tape Dispenser",
-     price: 20.6,
+     price: 12.00,
      description: "Cool car",
      image: "https://images-na.ssl-images-amazon.com/images/I/71kieVNLOWL._AC_SL1001_.jpg",
      description: "The dummy product is Otter tape dispenser"
@@ -83,6 +83,7 @@ function Checkout() {
             name={product.name}
             billingAddress
             shippingAddress
+            label="Pay with Stripe"
           />
         </div>
       </div>

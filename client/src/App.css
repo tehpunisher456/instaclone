@@ -109,6 +109,55 @@ p {
   padding-bottom: 30px;
 }
 
+
+.card {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.icon-white {
+  color: white;
+}
+
+.sidenav{
+  background-color: black;
+ 
+}
+
+@media (max-width: 868px) {
+  /* For mobile phones: */
+  .brand-logo,h2 {
+    position: fixed !important;
+    left: 48% !important;
+    transform: translate(-50%, 0) !important;    
+  }
+  .btn {
+    margin-left: 20px;
+  }
+}
+
+
+/* .StripeCheckout span {
+  color: white !important;
+  background-color: black !important;
+  border: none;
+  border-radius: 4px;
+} */
+
+/*Checkout page end*/
+
+
+/* Nav CSS */
+
+.brand-logo {
+  margin-left: 20px;
+}
+
+.hide-on-med-and-down {
+  margin-right: 20px;
+}
+/* Nav CSS end */
+
 /* Checkout page end*/
 
 .logout{
@@ -120,3 +169,4 @@ margin-right: 10px !important;
 font-weight: bolder !important;
 
 }
+
