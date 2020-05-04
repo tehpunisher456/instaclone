@@ -38,7 +38,7 @@ const NavBar = ()=>{
         <nav>
 
         <div className="nav-wrapper main-background-color">
-          <Link to={state?"/myfollowingpost":"/signin"} className="brand-logo center">Insta $ell</Link>
+          <Link to={state?"/myfollowingpost":"/signin"} className="brand-logo center">UwU Sell</Link>
 
           <ul id="nav-mobile" className="right">
              {renderList()}
