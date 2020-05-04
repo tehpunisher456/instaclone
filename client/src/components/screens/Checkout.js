@@ -1,7 +1,8 @@
-import React from "react";
+import React,{useState,useEffect,useContext} from 'react'
 import ReactDOM from "react-dom";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
+import {UserContext} from '../../App'
 import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -10,6 +11,21 @@ import "react-toastify/dist/ReactToastify.css";
 toast.configure();
 
 function Checkout() {
+  const [data,setData] = useState([])
+  const {state,dispatch} = useContext(UserContext)
+
+  useEffect(()=>{
+    fetch('/allpost',{
+        headers:{
+            "Authorization":"Bearer "+localStorage.getItem("jwt")
+        }
+    }).then(res=>res.json())
+    .then(result=>{
+        console.log(result)
+        setData(result.posts)
+    })
+ },[])
+ 
    const [product] = React.useState({
      name: "Otter-shaped Tape Dispenser",
      price: 12.00,

@@ -124,7 +124,9 @@ const Home  = ()=>{
 
                             }</h5>
                             <div className="card-image">
-                                <img src={item.photo}/>
+                                <Link to="/checkout"> 
+                                <img src={item.photo} alt=""/>
+                                </Link>
                             </div>
                             <div className="card-content">
                             {item.likes.includes(state._id)
@@ -146,7 +148,7 @@ const Home  = ()=>{
                                 {
                                     item.comments.map(record=>{
                                         return(
-                                        <h6 key={record._id}><span style={{fontWeight:"500"}}>{record.postedBy.userName}</span> {record.text}</h6>
+                                        <h6 classname="commentname" key={record._id}><span style={{fontWeight:"500"}}>{record.postedBy.userName}</span> {record.text}</h6>
                                         )
                                     })
                                 }

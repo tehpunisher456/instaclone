@@ -3,17 +3,18 @@ import { Link, useHistory } from 'react-router-dom'
 import { UserContext } from '../App'
 import M from 'materialize-css';
 
+
 const NavBar = () => {
   const { state, dispatch } = useContext(UserContext)
   const history = useHistory()
+
 
   document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems);
   });
 
- 
-
+  
   const renderList = () => {
     if (state) {
       return [
@@ -28,12 +29,14 @@ const NavBar = () => {
             <button className="btn #c62828 red darken-3"
               onClick={() => {
 
+
                 localStorage.clear()
                 dispatch({ type: "CLEAR" })
                 history.push('/signin')
               }}
             >
               Logout
+
             </button>
           </li>
         </ul>
@@ -71,8 +74,10 @@ const NavBar = () => {
     <nav>
 
       <div className="nav-wrapper main-background-color">
-        <Link to={state ? "/myfollowingpost" : "/signin"} className="brand-logo left">Insta $ell</Link>
+
+        <Link to={state ? "/myfollowingpost" : "/signin"} className="brand-logo left">Treasure Box</Link>
         <a href="#" data-target="mobile-demo" className="sidenav-trigger left" ><i className="material-icons icon-white">menu</i></a>
+
 
         <ul id="nav-mobile" className="right">
           {renderList()}
@@ -80,7 +85,6 @@ const NavBar = () => {
         </ul>
       </div>
     </nav>
-
 
 
 

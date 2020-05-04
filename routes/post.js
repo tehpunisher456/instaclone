@@ -4,6 +4,11 @@ const mongoose = require('mongoose')
 const requireLogin  = require('../middleware/requireLogin')
 const Post =  mongoose.model("Post")
 
+router.get('/singlepost/:postId', requireLogin,(req,res)=>{
+    Post.findOne({_id:req.params.postId})
+    .populate("postedBy", "_id userName")
+    .populate("comments.postedBy", "_id userName")
+})
 
 router.get('/allpost',requireLogin,(req,res)=>{
     Post.find()
