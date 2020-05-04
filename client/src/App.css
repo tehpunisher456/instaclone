@@ -109,4 +109,14 @@ p {
   padding-bottom: 30px;
 }
 
-/*Checkout page end*/
+/* Checkout page end*/
+
+.logout{
+margin-right: 10px !important;
+}
+
+  
+.commentname{
+font-weight: bolder !important;
+
+}

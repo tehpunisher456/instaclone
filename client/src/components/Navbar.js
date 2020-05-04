@@ -1,10 +1,11 @@
-
 import React, { useContext } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { UserContext } from '../App'
+
 const NavBar = () => {
   const { state, dispatch } = useContext(UserContext)
   const history = useHistory()
+  
   const renderList = () => {
     if (state) {
       return [
@@ -16,7 +17,7 @@ const NavBar = () => {
         <li><Link to="/checkout" className="navbar-link-color">Checkout</Link></li>,
 
         <li>
-          <button className="btn #c62828 red darken-3"
+          <button className="btn #c62828 red darken-3 logout"
             onClick={() => {
 
               localStorage.clear()
@@ -41,7 +42,7 @@ const NavBar = () => {
     <nav>
 
       <div className="nav-wrapper main-background-color">
-        <Link to={state ? "/myfollowingpost" : "/signin"} className="brand-logo center">Insta $ell</Link>
+        <Link to={state ? "/myfollowingpost" : "/signin"} className="brand-logo center">Treasure Box</Link>
 
         <ul id="nav-mobile" className="right">
           {renderList()}
