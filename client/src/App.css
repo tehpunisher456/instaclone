@@ -66,3 +66,57 @@ a{
   color: white !important;
 }
 
+
+
+/*Checkout page*/
+
+h1, h2, h3, p, a, button{
+  font-family:'poppins';
+  font-weight: 300;
+}
+
+.product-image {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.row {
+  margin: auto;
+  padding: 25px;
+}
+
+.col .s6 {
+  padding: 0px;
+}
+
+.product-name {
+  font-family:'poppins';
+  font-size: 2em;
+  font-weight: 700;
+  margin-top: 10px;
+
+}
+
+.product-price {
+  font-size: 1.3em;
+  margin: 10px;
+}
+
+p {
+  font-size: 1em;
+  font-weight: 300;
+  padding-bottom: 30px;
+}
+
+/* Checkout page end*/
+
+.logout{
+margin-right: 10px !important;
+}
+
+  
+.commentname{
+font-weight: bolder !important;
+
+}
