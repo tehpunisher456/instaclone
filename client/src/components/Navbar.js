@@ -33,10 +33,8 @@ const NavBar = () => {
                 localStorage.clear()
                 dispatch({ type: "CLEAR" })
                 history.push('/signin')
-              }}
-            >
+              }}>
               Logout
-
             </button>
           </li>
         </ul>
