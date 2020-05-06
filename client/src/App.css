@@ -66,6 +66,11 @@ a{
   color: white !important;
 }
 
+.card-title-color{
+  margin-bottom: 0;
+  padding-bottom: 50px;
+  color: white !important;
+}
 
 
 /*Checkout page*/
