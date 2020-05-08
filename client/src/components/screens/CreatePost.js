@@ -60,7 +60,7 @@ const CreatePost = ()=>{
  
 
    return(
-       <div className="card input-filed"
+       <div className="row card input-filed"
        style={{
            margin:"30px auto",
            maxWidth:"500px",

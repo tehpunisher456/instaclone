@@ -2,6 +2,9 @@ import React,{useState,useContext,} from 'react'
 import {Link,useHistory} from 'react-router-dom'
 import {UserContext} from '../../App'
 import M from 'materialize-css'
+import HowItWorks from './HowItWorks'
+
+
 const SignIn  = ()=>{
     const {state,dispatch} = useContext(UserContext)
     const history = useHistory()
@@ -39,31 +42,35 @@ const SignIn  = ()=>{
         })
     }
    return (
-      <div className="mycard">
-          <div className="card auth-card input-field">
-            <h2>BTS UwU</h2>
-            <input
-            type="text"
-            placeholder="Username"
-            value={userName}
-            onChange={(e)=>setUserName(e.target.value)}
-            />
-            <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e)=>setPasword(e.target.value)}
-            />
-            <button className="btn waves-effect waves-light #64b5f6 blue darken-1"
-            onClick={()=>PostData()}
-            >
-                Login
-            </button>
-            <h5>
-                <Link to="/signup">Dont have an account? Sign Up</Link>
-            </h5>
-    
-        </div>
+    <div className="home-body">
+    <div className="mycard">
+        <div className="card auth-card input-field">
+          <h2 className="landing-title">Sign In</h2>
+          <input
+          type="text"
+          placeholder="Username"
+          value={userName}
+          onChange={(e)=>setUserName(e.target.value)}
+          />
+          <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e)=>setPasword(e.target.value)}
+          />
+          <button className="btn waves-effect waves-light #c62828 red darken-3"
+          onClick={()=>PostData()}
+          >
+              Login
+          </button>
+          <h5>
+              <Link to="/signup">Dont have an account? Sign Up</Link>
+          </h5>
+         
+  
+      </div>
+      </div>
+      <HowItWorks />
       </div>
    )
 }

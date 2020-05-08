@@ -11,6 +11,7 @@ import {reducer,initialState} from './reducers/userReducer'
 import UserProfile from './components/screens/UserProfile'
 import MyTimeline from './components/screens/MyTimeline'
 import Checkout from './components/screens/Checkout'
+import HowItWorks from './components/screens/HowItWorks';
 export const UserContext = createContext()
 
 
@@ -50,6 +51,10 @@ const Routing = ()=>{
       </Route>
       <Route path="/checkout">
         <Checkout />
+      </Route>
+
+      <Route path="/howitworks">
+        <HowItWorks />
       </Route>
       
     </Switch>
