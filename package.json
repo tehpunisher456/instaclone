@@ -4,9 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "client": "cd client && npm start",
-    "server": "npm start",
-    "start": "concurrently - kill-others \"npm run server\" \"npm run client\"",
+    "start": "concurrently \"node server.js\" \"cd client && npm start\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "",
