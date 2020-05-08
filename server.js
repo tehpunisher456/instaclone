@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 5000;
 const {MONGOURI} = require('./config/keys')
 
 const cors = require("cors");
-const stripe = require("stripe")("STRIPE_SECRET_KEY");
+const stripe = require("stripe")("pk_test_4TbuO6qAW2XPuce1Q6ywrGP200NrDZ2233");
 const uuid = require("uuid");
 
 // // Serve up static assets (usually on heroku)
