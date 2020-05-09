@@ -16,10 +16,10 @@ const uuid = require("uuid");
 
 
 // Connect to the Mongo DB
-mongoose.connect(MONGOURI,{
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:5000", {
   useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+  useFindAndModify: false
+});
 
 mongoose.connection.on('connected', ()=>{
   console.log("connected to mongo")
