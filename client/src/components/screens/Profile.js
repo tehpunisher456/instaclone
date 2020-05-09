@@ -1,5 +1,7 @@
 import React,{useEffect,useState,useContext} from 'react'
 import {UserContext} from '../../App'
+import {Link} from 'react-router-dom'
+
 
 const Profile  = ()=>{
     const [mypics,setPics] = useState([])
@@ -101,7 +103,9 @@ const Profile  = ()=>{
                {
                    mypics.map(item=>{
                        return(
+                    <Link to="/checkout"> 
                         <img key={item._id} className="item" src={item.photo} alt={item.title}/>  
+                     </Link>
                        )
                    })
                }

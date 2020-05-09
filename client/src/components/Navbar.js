@@ -24,7 +24,7 @@ const NavBar = () => {
           <li><Link to="/profile" className="navbar-link-color">Profile</Link></li>
           <li><Link to="/create" className="navbar-link-color">Create Post</Link></li>
           <li><Link to="/myfollowingpost" className="navbar-link-color">My Timeline</Link></li>
-          <li><Link to="/checkout" className="navbar-link-color">Checkout</Link></li>
+          {/* <li><Link to="/checkout" className="navbar-link-color">Checkout</Link></li> */}
           <li>
             <button className="btn #c62828 red darken-3"
               onClick={() => {
@@ -44,7 +44,7 @@ const NavBar = () => {
           <li><Link to="/profile" className="navbar-link-color">Profile</Link></li>
           <li><Link to="/create" className="navbar-link-color">Create Post</Link></li>
           <li><Link to="/myfollowingpost" className="navbar-link-color">My Timeline</Link></li>
-          <li><Link to="/checkout" className="navbar-link-color">Checkout</Link></li>
+          {/* <li><Link to="/checkout" className="navbar-link-color">Checkout</Link></li> */}
           <li>
             <button className="btn #c62828 red darken-3"
               onClick={() => {

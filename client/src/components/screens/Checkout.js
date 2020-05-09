@@ -64,17 +64,17 @@ function Checkout() {
       }</h5> */}
 
       <div className="col s12">
-      <h1 className="product-name">Otter-shaped Tape Dispenser</h1>
-        <div className="card-image">
-          <img src="https://images-na.ssl-images-amazon.com/images/I/71kieVNLOWL._AC_SL1001_.jpg" className="product-image" />
+      <h5 className="product-name">Randomusername</h5>
+        <div className="card-image product-image">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/71kieVNLOWL._AC_SL1001_.jpg" />
         </div>
       </div>
 
       <div className="col s12 card-content">
         <div className="product">
          
-          <h3 className="product-price">On Sale · $12.00</h3>
-          <p>"The dummy product is Otter tape dispenser"</p>
+          <h3 className="product-price">$12.00</h3>
+          <p>An Otter tape dispenser</p>
         </div>
         <StripeCheckout
           stripeKey="pk_test_4TbuO6qAW2XPuce1Q6ywrGP200NrDZ2233"
