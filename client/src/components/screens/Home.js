@@ -109,6 +109,18 @@ const Home  = ()=>{
             setData(newData)
         })
     }
+    const openCheckout = (postid)=>{
+        fetch(`/singlepost/${postid}`,{
+            method:"GET",
+            headers:{
+                Authorization:"Bearer "+ localStorage.getItem("jwt")
+            }
+        }).then(res=>res.json())
+        .then(result=>{
+            console.log(result)
+            setData(result.post)
+        })
+    }
    return (
        <div className="home row">
            {
@@ -129,7 +141,9 @@ const Home  = ()=>{
                             </div>
                             <div className="card-image">
                                 <Link to="/checkout"> 
+
                                 <img src={item.photo} alt="" className="product-image-home"/>
+
                                 </Link>
                             </div>
                             <div className="card-content">
@@ -148,11 +162,18 @@ const Home  = ()=>{
                            <h6 className="likes-numbers">{item.likes.length} likes</h6>
                            <h6 className="product-price-home">${item.price}</h6>
                            
+
                            </div>
 
                                 <h6 className="product-name-home">{item.title}</h6>
                                 
                                  <p>{item.body}</p>
+
+                                <h6>{item.likes.length} likes</h6>
+                                <h6>{item.title}</h6>
+                                <h6 classname="product-price">${item.price}</h6>
+                                <p>{item.body}</p>
+
                                 {
                                     item.comments.map(record=>{
                                         return(

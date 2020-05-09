@@ -124,7 +124,9 @@ const Home  = ()=>{
 
                             }</h5>
                             <div className="card-image">
+                                <Link to="/checkout">
                                 <img src={item.photo}/>
+                                </Link>
                             </div>
                             <div className="card-content">
                             {item.likes.includes(state._id)

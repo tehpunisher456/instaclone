@@ -103,7 +103,7 @@ h1, h2, h3, p, a, button{
 
 .product-name {
   font-family:'poppins';
-  font-size: 2em;
+  font-size: 15px;
   font-weight: 700;
   margin-top: 10px;
 
@@ -112,6 +112,7 @@ h1, h2, h3, p, a, button{
 .product-price {
   font-size: 1.3em;
   margin: 10px;
+  font-weight: 600;
 }
 
 p {
@@ -176,10 +177,10 @@ margin-right: 10px !important;
 }
 
   
-.commentname{
+/* .commentname{
 font-weight: bolder !important;
 
-}
+} */
 
 
 
@@ -187,7 +188,7 @@ font-weight: bolder !important;
 
 
 h5 {
-  font-size: 1em;
+  font-size: 25px;
 }
 
 .landing-title {
