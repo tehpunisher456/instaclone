@@ -14,13 +14,13 @@ const HowItWorks = () => {
               <div className="col s12 m6">
 
                 <div className="home-info">
-                      <h1 className="home-title"> How It Works </h1>
+                      <h1 className="home-title"> A New Way to Shop </h1>
                       <h4 className="home-text"> 
-                          Buyer, FOLLOW your favorite seller to easily discover goods that you want to buy
-                          Seller, POST your goods images and price easily like instagram
+                          Combining shopping and social  media, users can follow their favorite sellers, find products scrolling through your Timeline,
+                          and sell items with a few clicks. 
                       </h4> 
                     
-                      <p> Please sign in or log in to enjoy simple Treasure Box, NOW!</p>
+                      <p> Sign Up now and see what treasures you can find.</p>
                   </div>
               </div>
 
