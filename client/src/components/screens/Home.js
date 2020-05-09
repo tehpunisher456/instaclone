@@ -122,11 +122,14 @@ const Home  = ()=>{
         })
     }
    return (
-       <div className="home">
+       <div className="home row">
            {
                data.map(item=>{
                    return(
+                    
+                    <div className="col s12">
                        <div className="card home-card" key={item._id}>
+                       <div className="product-userID-home  ">
                             <h5 className = "main-background-color card-title-color" style={{padding:"5px"}}><Link className = "navbar-link-color" to={item.postedBy._id !== state._id?"/profile/"+item.postedBy._id :"/profile"  }>{item.postedBy.userName}</Link> {item.postedBy._id == state._id 
                             && <i className="material-icons" style={{
                                 float:"right"
@@ -135,28 +138,42 @@ const Home  = ()=>{
                             >delete</i>
 
                             }</h5>
+                            </div>
                             <div className="card-image">
                                 <Link to="/checkout"> 
-                                <img src={item.photo} alt="" onclick={()=>openCheckout()}/>
+
+                                <img src={item.photo} alt="" className="product-image-home"/>
+
                                 </Link>
                             </div>
                             <div className="card-content">
+
+                            <div className="likes-box">
                             {item.likes.includes(state._id)
                             ? 
-                             <i className="material-icons"style={{ color: "red" }}
+                             <i className="material-icons likes-icon"style={{ color: "red" }}
                                     onClick={()=>{unlikePost(item._id)}}
                               >favorite</i>
                             : 
-                            <i className="material-icons"style={{ color: "red" }}
+                            <i className="material-icons likes-icon"style={{ color: "red" }}
                             onClick={()=>{likePost(item._id)}}
                             >favorite_border</i>
                             }
-                            
+                           <h6 className="likes-numbers">{item.likes.length} likes</h6>
+                           <h6 className="product-price-home">${item.price}</h6>
                            
+
+                           </div>
+
+                                <h6 className="product-name-home">{item.title}</h6>
+                                
+                                 <p>{item.body}</p>
+
                                 <h6>{item.likes.length} likes</h6>
                                 <h6>{item.title}</h6>
                                 <h6 classname="product-price">${item.price}</h6>
                                 <p>{item.body}</p>
+
                                 {
                                     item.comments.map(record=>{
                                         return(
@@ -169,15 +186,18 @@ const Home  = ()=>{
                                     makeComment(e.target[0].value,item._id)
                                 }}>
                                   <input type="text" placeholder="add a comment" />  
-                                </form>
+                                </form> 
                                 
                             </div>
                         </div> 
+                        </div>
+                        
                    )
                })
            }
           
           
+       
        </div>
    )
 }
